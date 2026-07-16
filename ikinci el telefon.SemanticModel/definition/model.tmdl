@@ -1,0 +1,18 @@
+model Model
+	culture: tr-TR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: tr-TR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["used_phone_price_prediction_1M"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table used_phone_price_prediction_1M
+
+ref cultureInfo tr-TR
+

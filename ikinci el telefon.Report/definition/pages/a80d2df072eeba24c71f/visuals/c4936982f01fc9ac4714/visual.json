@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "c4936982f01fc9ac4714",
+  "position": {
+    "x": 10.081043545523267,
+    "y": 0,
+    "z": 0,
+    "height": 720.07453896594757,
+    "width": 1270.2114867359317,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "used_phone_price_prediction_1M"
+                    }
+                  },
+                  "Property": "condition"
+                }
+              },
+              "queryRef": "used_phone_price_prediction_1M.condition",
+              "nativeQueryRef": "condition",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "used_phone_price_prediction_1M"
+                    }
+                  },
+                  "Property": "Avg Resale Price"
+                }
+              },
+              "queryRef": "used_phone_price_prediction_1M.Avg Resale Price",
+              "nativeQueryRef": "Avg Resale Price"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "used_phone_price_prediction_1M"
+                  }
+                },
+                "Property": "Avg Resale Price"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "8c2f5bb5b0e3ef914a8f",
+  "position": {
+    "x": 0,
+    "y": 360.03726948297378,
+    "z": 1000,
+    "height": 360.03726948297378,
+    "width": 639.4261906017615,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "used_phone_price_prediction_1M"
+                    }
+                  },
+                  "Property": "model"
+                }
+              },
+              "queryRef": "used_phone_price_prediction_1M.model",
+              "nativeQueryRef": "model",
+              "active": true
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "used_phone_price_prediction_1M"
+                        }
+                      },
+                      "Property": "age_months"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(used_phone_price_prediction_1M.age_months)",
+              "nativeQueryRef": "Toplam age_months",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "used_phone_price_prediction_1M"
+                        }
+                      },
+                      "Property": "resale_price"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(used_phone_price_prediction_1M.resale_price)",
+              "nativeQueryRef": "Toplam resale_price"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

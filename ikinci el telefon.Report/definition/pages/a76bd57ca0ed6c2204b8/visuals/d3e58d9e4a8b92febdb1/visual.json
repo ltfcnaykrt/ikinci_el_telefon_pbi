@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "d3e58d9e4a8b92febdb1",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 720.07453896594757,
+    "width": 1280.2925302814549,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "used_phone_price_prediction_1M"
+                    }
+                  },
+                  "Property": "model"
+                }
+              },
+              "queryRef": "used_phone_price_prediction_1M.model",
+              "nativeQueryRef": "model",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "used_phone_price_prediction_1M"
+                    }
+                  },
+                  "Property": "Total Phones"
+                }
+              },
+              "queryRef": "used_phone_price_prediction_1M.Total Phones",
+              "nativeQueryRef": "Total Phones"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "used_phone_price_prediction_1M"
+                  }
+                },
+                "Property": "Total Phones"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "bbc06ec262d7ebd77b42",
+  "position": {
+    "x": 649,
+    "y": 0,
+    "z": 2000,
+    "height": 323,
+    "width": 631,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "used_phone_price_prediction_1M"
+                    }
+                  },
+                  "Property": "release_year"
+                }
+              },
+              "queryRef": "used_phone_price_prediction_1M.release_year",
+              "nativeQueryRef": "release_year",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "used_phone_price_prediction_1M"
+                    }
+                  },
+                  "Property": "Price Drop %"
+                }
+              },
+              "queryRef": "used_phone_price_prediction_1M.Price Drop %",
+              "nativeQueryRef": "Price Drop %"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "used_phone_price_prediction_1M"
+                  }
+                },
+                "Property": "Price Drop %"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

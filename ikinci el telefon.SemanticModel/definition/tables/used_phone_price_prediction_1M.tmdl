@@ -1,0 +1,256 @@
+table used_phone_price_prediction_1M
+	lineageTag: 4f227db0-a8c3-4866-8c99-6bb434296ae3
+
+	measure 'Avg Resale Price' = AVERAGE('used_phone_price_prediction_1M'[resale_price])
+		lineageTag: 969e956f-6cfa-4640-9727-db54717eb52c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Original Price' = AVERAGE('used_phone_price_prediction_1M'[original_price])
+		lineageTag: 1b57bcac-68a8-4166-a7d4-b6254aa32fd6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Price Drop %' = DIVIDE([Avg Original Price] - [Avg Resale Price], [Avg Original Price], 0)
+		formatString: %0.00;-%0.00;%0.00
+		lineageTag: a799121f-31f3-427b-b0df-7d76741498d7
+
+	measure 'Total Phones' = COUNTROWS('used_phone_price_prediction_1M')
+		formatString: #,0
+		lineageTag: c1304528-1143-4077-8255-15868eeec64b
+
+	column model
+		dataType: string
+		lineageTag: b8671a10-3b3a-4f88-85fd-70ecd09edcc8
+		summarizeBy: none
+		sourceColumn: model
+
+		annotation SummarizationSetBy = Automatic
+
+	column release_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 10628b85-d13f-47b7-ada8-81dd643e7219
+		summarizeBy: sum
+		sourceColumn: release_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column ram_gb
+		dataType: int64
+		formatString: 0
+		lineageTag: 810e4431-612f-442b-904b-0853db18d16d
+		summarizeBy: sum
+		sourceColumn: ram_gb
+
+		annotation SummarizationSetBy = Automatic
+
+	column storage_gb
+		dataType: int64
+		formatString: 0
+		lineageTag: 7dc982d6-b76f-4eab-b613-860b508f08ef
+		summarizeBy: sum
+		sourceColumn: storage_gb
+
+		annotation SummarizationSetBy = Automatic
+
+	column screen_size_inches
+		dataType: int64
+		formatString: 0
+		lineageTag: b225ae55-594e-4c65-b4e0-6ab3c656350d
+		summarizeBy: sum
+		sourceColumn: screen_size_inches
+
+		annotation SummarizationSetBy = Automatic
+
+	column battery_capacity
+		dataType: int64
+		formatString: 0
+		lineageTag: 01afc9cf-ea0d-4f78-8b9c-1dd7a114f2e2
+		summarizeBy: sum
+		sourceColumn: battery_capacity
+
+		annotation SummarizationSetBy = Automatic
+
+	column os_type
+		dataType: string
+		lineageTag: 20f9386a-9f4a-4f28-9fee-e5f69d5d5583
+		summarizeBy: none
+		sourceColumn: os_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_5g
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f75d97a-7491-4581-a58e-df0ecb7babce
+		summarizeBy: sum
+		sourceColumn: has_5g
+
+		annotation SummarizationSetBy = Automatic
+
+	column original_price
+		dataType: int64
+		formatString: 0
+		lineageTag: 1fe8cc9b-cca7-4f48-aaa9-81a1efc37874
+		summarizeBy: sum
+		sourceColumn: original_price
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchase_year
+		dataType: int64
+		formatString: 0
+		lineageTag: f9a7655d-2de7-4e02-aca8-2c6ea364cbb7
+		summarizeBy: sum
+		sourceColumn: purchase_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column age_months
+		dataType: int64
+		formatString: 0
+		lineageTag: 11fb6741-74cd-4d19-9b9a-615cdbf039fb
+		summarizeBy: sum
+		sourceColumn: age_months
+
+		annotation SummarizationSetBy = Automatic
+
+	column usage_hours_per_day
+		dataType: int64
+		formatString: 0
+		lineageTag: 434c6d8f-1455-4e6b-afd2-b481f2aa133a
+		summarizeBy: sum
+		sourceColumn: usage_hours_per_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column condition
+		dataType: string
+		lineageTag: 846660f5-2af7-49d3-bb38-082433857e91
+		summarizeBy: none
+		sourceColumn: condition
+
+		annotation SummarizationSetBy = Automatic
+
+	column battery_health
+		dataType: int64
+		formatString: 0
+		lineageTag: e1952d46-159d-41fa-94d5-a67991210068
+		summarizeBy: sum
+		sourceColumn: battery_health
+
+		annotation SummarizationSetBy = Automatic
+
+	column screen_cracked
+		dataType: int64
+		formatString: 0
+		lineageTag: bc81245f-fb83-4467-beeb-2a5391c6e5ad
+		summarizeBy: sum
+		sourceColumn: screen_cracked
+
+		annotation SummarizationSetBy = Automatic
+
+	column body_damage
+		dataType: int64
+		formatString: 0
+		lineageTag: cfbc0466-0ff0-43e4-956e-1c4673a72dde
+		summarizeBy: sum
+		sourceColumn: body_damage
+
+		annotation SummarizationSetBy = Automatic
+
+	column repair_history
+		dataType: int64
+		formatString: 0
+		lineageTag: 44cc2199-b343-46da-8941-13bc5e2af46e
+		summarizeBy: sum
+		sourceColumn: repair_history
+
+		annotation SummarizationSetBy = Automatic
+
+	column water_damage
+		dataType: int64
+		formatString: 0
+		lineageTag: 660663a2-6934-432b-8e6f-c302d39ab520
+		summarizeBy: sum
+		sourceColumn: water_damage
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_tier
+		dataType: string
+		lineageTag: 463341b2-3116-4203-92b5-7f31bd98be8c
+		summarizeBy: none
+		sourceColumn: city_tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_type
+		dataType: string
+		lineageTag: 7e8c932b-9987-40cc-9d7f-70214a25d8d4
+		summarizeBy: none
+		sourceColumn: seller_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column warranty_remaining_months
+		dataType: int64
+		formatString: 0
+		lineageTag: af18f45e-af4c-4e02-adb0-862c6c1ca904
+		summarizeBy: sum
+		sourceColumn: warranty_remaining_months
+
+		annotation SummarizationSetBy = Automatic
+
+	column box_available
+		dataType: int64
+		formatString: 0
+		lineageTag: ae8cb77f-f54b-4eb1-b66d-67b1a1aed987
+		summarizeBy: sum
+		sourceColumn: box_available
+
+		annotation SummarizationSetBy = Automatic
+
+	column charger_available
+		dataType: int64
+		formatString: 0
+		lineageTag: f4060499-47a1-4a57-980d-4d4f558a475b
+		summarizeBy: sum
+		sourceColumn: charger_available
+
+		annotation SummarizationSetBy = Automatic
+
+	column market_demand_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d6efced-21c9-49c3-b601-1ca66a93b3ad
+		summarizeBy: sum
+		sourceColumn: market_demand_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column resale_price
+		dataType: int64
+		formatString: 0
+		lineageTag: 7fecb822-80d5-47f5-96fe-15a36c77b9e8
+		summarizeBy: sum
+		sourceColumn: resale_price
+
+		annotation SummarizationSetBy = Automatic
+
+	partition used_phone_price_prediction_1M = m
+		mode: import
+		source =
+				let
+				  Kaynak = Csv.Document(File.Contents("C:\Users\latif\OneDrive\Masaüstü\used_phone_price_prediction_1M.csv"), [Delimiter = ",", Columns = 28, QuoteStyle = QuoteStyle.None]),
+				  #"Yükseltilen üst bilgiler" = Table.PromoteHeaders(Kaynak, [PromoteAllScalars = true]),
+				  #"Değiştirilen sütun türü" = Table.TransformColumnTypes(#"Yükseltilen üst bilgiler", {{"brand", type text}, {"model", type text}, {"release_year", Int64.Type}, {"ram_gb", Int64.Type}, {"storage_gb", Int64.Type}, {"screen_size_inches", Int64.Type}, {"battery_capacity", Int64.Type}, {"processor_score", Int64.Type}, {"camera_score", Int64.Type}, {"os_type", type text}, {"has_5g", Int64.Type}, {"original_price", Int64.Type}, {"purchase_year", Int64.Type}, {"age_months", Int64.Type}, {"usage_hours_per_day", Int64.Type}, {"condition", type text}, {"battery_health", Int64.Type}, {"screen_cracked", Int64.Type}, {"body_damage", Int64.Type}, {"repair_history", Int64.Type}, {"water_damage", Int64.Type}, {"city_tier", type text}, {"seller_type", type text}, {"warranty_remaining_months", Int64.Type}, {"box_available", Int64.Type}, {"charger_available", Int64.Type}, {"market_demand_score", Int64.Type}, {"resale_price", Int64.Type}}, "tr"),
+				    #"Kaldırılan Sütunlar" = Table.RemoveColumns(#"Değiştirilen sütun türü",{"brand", "processor_score", "camera_score"})
+				in
+				  #"Kaldırılan Sütunlar"
+
+	annotation PBI_NavigationStepName = Gezinme
+
+	annotation PBI_ResultType = Table
+

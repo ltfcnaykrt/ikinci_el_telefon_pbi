@@ -1,0 +1,66 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "0601a3707f2f9bd57a71",
+  "position": {
+    "x": 649,
+    "y": 0,
+    "z": 2000,
+    "height": 360,
+    "width": 629,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "gauge",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "used_phone_price_prediction_1M"
+                        }
+                      },
+                      "Property": "battery_health"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(used_phone_price_prediction_1M.battery_health)",
+              "nativeQueryRef": "Ortalama battery_health"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "used_phone_price_prediction_1M"
+                      }
+                    },
+                    "Property": "battery_health"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

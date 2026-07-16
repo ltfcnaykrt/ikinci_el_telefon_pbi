@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "27412a9dce0de4fef9f4",
+  "position": {
+    "x": 639.4261906017615,
+    "y": 360.03726948297378,
+    "z": 3000,
+    "height": 360.03726948297378,
+    "width": 640.8663396796934,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "used_phone_price_prediction_1M"
+                    }
+                  },
+                  "Property": "Price Drop %"
+                }
+              },
+              "queryRef": "used_phone_price_prediction_1M.Price Drop %",
+              "nativeQueryRef": "Price Drop %"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "used_phone_price_prediction_1M"
+                  }
+                },
+                "Property": "Price Drop %"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

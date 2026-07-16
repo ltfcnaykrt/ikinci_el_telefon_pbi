@@ -1,0 +1,76 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "8f95cd5b151ab85c7632",
+  "position": {
+    "x": 10.081043545523267,
+    "y": 0,
+    "z": 0,
+    "height": 360.03726948297378,
+    "width": 629.34514705623826,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "used_phone_price_prediction_1M"
+                    }
+                  },
+                  "Property": "storage_gb"
+                }
+              },
+              "queryRef": "used_phone_price_prediction_1M.storage_gb",
+              "nativeQueryRef": "storage_gb",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "used_phone_price_prediction_1M"
+                    }
+                  },
+                  "Property": "ram_gb"
+                }
+              },
+              "queryRef": "used_phone_price_prediction_1M.ram_gb",
+              "nativeQueryRef": "ram_gb",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "used_phone_price_prediction_1M"
+                    }
+                  },
+                  "Property": "Avg Resale Price"
+                }
+              },
+              "queryRef": "used_phone_price_prediction_1M.Avg Resale Price",
+              "nativeQueryRef": "Avg Resale Price"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
